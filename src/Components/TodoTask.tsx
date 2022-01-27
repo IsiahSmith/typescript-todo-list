@@ -11,7 +11,7 @@ const TodoTask = ({task}: Props) => {
         <div className="task">
             <div className="content">
                 <span>{task.taskName}</span>
-                <span>{task.deadline}</span>
+                <span>{task.deadline} Days</span>
             </div>
             <button>X</button>
         </div>
