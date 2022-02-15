@@ -10,6 +10,7 @@ const App: FC = () => {
   const [notes, setNotes] = useState<string>("");
   const [todoList, setTodoList] = useState<ITask[]>([]);
 
+  // Updates task values to inputted entries
   const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
     if (event.target.name === "task") {
       setTask(event.target.value)
@@ -20,6 +21,8 @@ const App: FC = () => {
     }
   };
 
+  // Sets new task to input fields on "Add Task" button click
+  // Also empties input fields
   const addTask = (): void => {
     const newTask = {taskName: task, deadline: deadline, notes: notes};
     setTodoList([...todoList, newTask]);
@@ -28,6 +31,7 @@ const App: FC = () => {
     setNotes("");
   };
 
+  // Removes task from list on "X" button click
   const completeTask = (taskNameToDelete: string): void => {
     setTodoList(todoList.filter((task) => {
       return task.taskName != taskNameToDelete
