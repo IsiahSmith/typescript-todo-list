@@ -7,6 +7,7 @@ const App: FC = () => {
 
   const [task, setTask] = useState<string>("");
   const [deadline, setDeadline] = useState<number>(0);
+  const [notes, setNotes] = useState<string>("");
   const [todoList, setTodoList] = useState<ITask[]>([]);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
@@ -46,6 +47,13 @@ const App: FC = () => {
             placeholder="Deadline (days)"
             name="deadline"
             value={deadline}
+            onChange={handleChange}
+          />
+          <input 
+            type="text" 
+            placeholder="Notes"
+            name="notes"
+            value={notes}
             onChange={handleChange}
           />
         </div>
