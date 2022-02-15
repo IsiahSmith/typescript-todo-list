@@ -13,8 +13,10 @@ const App: FC = () => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
     if (event.target.name === "task") {
       setTask(event.target.value)
-    } else {
+    } else if (event.target.name === "deadline") {
       setDeadline(Number(event.target.value))
+    } else {
+      setNotes(event.target.value)
     }
   };
 
@@ -23,6 +25,7 @@ const App: FC = () => {
     setTodoList([...todoList, newTask]);
     setTask("");
     setDeadline(0);
+    setNotes("");
   };
 
   const completeTask = (taskNameToDelete: string): void => {
