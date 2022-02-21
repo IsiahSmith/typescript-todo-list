@@ -8,7 +8,7 @@ const App: FC = () => {
   const [task, setTask] = useState<string>("");
   const [deadline, setDeadline] = useState<number>(0);
   const [notes, setNotes] = useState<string>("");
-  const [name, setName] = useState<string>("");
+  const [firstName, setFirstName] = useState<string>("");
   const [todoList, setTodoList] = useState<ITask[]>([]);
 
   // Updates task values to inputted entries
@@ -20,19 +20,19 @@ const App: FC = () => {
     } else if (event.target.name === "notes") {
       setNotes(event.target.value)
     } else {
-      setName(event.target.value)
+      setFirstName(event.target.value)
     }
   };
 
   // Sets new task to input fields on "Add Task" button click
   // Also empties input fields
   const addTask = (): void => {
-    const newTask = {taskName: task, deadline: deadline, notes: notes, name: name};
+    const newTask = {taskName: task, deadline: deadline, notes: notes, firstName: firstName};
     setTodoList([...todoList, newTask]);
     setTask("");
     setDeadline(0);
     setNotes("");
-    setName("");
+    setFirstName("");
   };
 
   // Removes task from list on "X" button click
@@ -70,8 +70,8 @@ const App: FC = () => {
           <input 
             type="text" 
             placeholder="Name"
-            name="name"
-            value={name}
+            name="firstName"
+            value={firstName}
             onChange={handleChange}
           />
         </div>
