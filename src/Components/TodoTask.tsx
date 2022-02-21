@@ -17,7 +17,7 @@ const TodoTask = ({task, completeTask}: Props) => {
                 <span>{task.firstName}'s Task</span>
             </div>
             <button 
-                onClick={() => {completeTask(task.taskName);}}>X</button>
+                onClick={() => {completeTask(task.taskName);}}>DELETE</button>
         </div>
     );
 };
