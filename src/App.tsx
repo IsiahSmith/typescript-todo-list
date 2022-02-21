@@ -17,15 +17,17 @@ const App: FC = () => {
       setTask(event.target.value)
     } else if (event.target.name === "deadline") {
       setDeadline(Number(event.target.value))
-    } else {
+    } else if (event.target.name === "notes") {
       setNotes(event.target.value)
+    } else {
+      setName(event.target.value)
     }
   };
 
   // Sets new task to input fields on "Add Task" button click
   // Also empties input fields
   const addTask = (): void => {
-    const newTask = {taskName: task, deadline: deadline, notes: notes};
+    const newTask = {taskName: task, deadline: deadline, notes: notes, name: name};
     setTodoList([...todoList, newTask]);
     setTask("");
     setDeadline(0);
