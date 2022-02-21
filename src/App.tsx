@@ -8,6 +8,7 @@ const App: FC = () => {
   const [task, setTask] = useState<string>("");
   const [deadline, setDeadline] = useState<number>(0);
   const [notes, setNotes] = useState<string>("");
+  const [name, setName] = useState<string>("");
   const [todoList, setTodoList] = useState<ITask[]>([]);
 
   // Updates task values to inputted entries
@@ -29,6 +30,7 @@ const App: FC = () => {
     setTask("");
     setDeadline(0);
     setNotes("");
+    setName("");
   };
 
   // Removes task from list on "X" button click
@@ -61,6 +63,13 @@ const App: FC = () => {
             placeholder="Notes"
             name="notes"
             value={notes}
+            onChange={handleChange}
+          />
+          <input 
+            type="text" 
+            placeholder="Name"
+            name="name"
+            value={name}
             onChange={handleChange}
           />
         </div>
